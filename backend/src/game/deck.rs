@@ -42,6 +42,12 @@ impl Deck {
     pub fn deal(&mut self) -> Option<Card> {
         self.cards.pop()
     }
+
+    pub fn deal_to(&mut self, player: &mut super::PlayerState) {
+        if let Some(card) = self.deal() {
+            player.hand.push(card);
+        }
+    }
 }
 
 impl Default for Deck {

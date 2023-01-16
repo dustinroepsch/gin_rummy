@@ -1,16 +1,7 @@
-use gin_rummy::game::deck::Deck;
+use gin_rummy::game::{deck::Deck, Game};
 
 fn main() {
-    let mut deck = Deck::new();
-    println!("Ordered deck {}\n\n", serde_json::to_string(&deck).unwrap());
-    deck.shuffle();
-    println!(
-        "Shuffled deck {}\n\n",
-        serde_json::to_string(&deck).unwrap()
-    );
-    println!(
-        "Dealing cards: {}, {}",
-        deck.deal().unwrap(),
-        deck.deal().unwrap()
-    );
+    let game = Game::new();
+
+    println!("{}", serde_json::to_string_pretty(&game).unwrap());
 }
