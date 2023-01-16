@@ -1,11 +1,8 @@
-use gin_rummy::game::card::Deck;
+use gin_rummy::game::deck::Deck;
 
 fn main() {
     let mut deck = Deck::new();
-    println!(
-        "Ordered deck {}\n\n",
-        serde_json::to_string(&deck).unwrap()
-    );
+    println!("Ordered deck {}\n\n", serde_json::to_string(&deck).unwrap());
     deck.shuffle();
     println!(
         "Shuffled deck {}\n\n",
