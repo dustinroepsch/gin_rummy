@@ -1,4 +1,4 @@
-use gin_rummy::game::{deck::Deck, Game};
+use gin_rummy::game::Game;
 
 fn main() {
     let game = Game::new();
